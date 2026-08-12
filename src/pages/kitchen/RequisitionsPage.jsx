@@ -65,10 +65,42 @@ export default function RequisitionsPage() {
   }
 
   const decide = async (req, status) => {
-    await supabase
+    const { error } = await supabase
       .from('requisitions')
       .update({ status, decided_by: profile.id, decided_at: new Date().toISOString() })
       .eq('id', req.id)
+    if (error) return
+
+    // Fulfilling a requisition is the actual warehouse -> kitchen handoff: the
+    // stock has to physically leave the warehouse now, so — same as StockInPage
+    // does for deliveries — we log it to stock_movements. The DB trigger picks
+    // this up to decrement items.current_stock and write the audit entry.
+    // Without this, "fulfilled" was just a status label and warehouse stock
+    // never actually moved.
+    if (status === 'fulfilled') {
+      const itemLines = req.requisition_items || []
+      if (itemLines.length > 0) {
+        const rows = itemLines.map((ri) => ({
+          item_id: ri.item_id,
+          movement_type: 'requisition_out',
+          quantity: ri.quantity_requested,
+          reason: `Requisition #${req.id} fulfilled to kitchen`,
+          performed_by: profile.id
+        }))
+        const { error: moveError } = await supabase.from('stock_movements').insert(rows)
+        if (moveError) {
+          // Roll the status back so the requisition isn't silently marked
+          // fulfilled while the warehouse stock was never actually moved.
+          await supabase
+            .from('requisitions')
+            .update({ status: 'approved', decided_by: profile.id, decided_at: new Date().toISOString() })
+            .eq('id', req.id)
+          load()
+          return
+        }
+      }
+    }
+
     load()
   }
 
