@@ -38,7 +38,16 @@
     "signingIn": "እየገባ ነው…",
     "invalidCredentials": "ኢሜይል ወይም የይለፍ ቃል ትክክል አይደለም።",
     "welcome": "እንኳን ደህና መጡ",
-    "subtitle": "አስተዳዳሪዎ በከፈተልዎት አካውንት ይግቡ።"
+    "subtitle": "አስተዳዳሪዎ በከፈተልዎት አካውንት ይግቡ።",
+    "forgotPassword": "የይለፍ ቃል ረሱ?",
+    "resetSubtitle": "ኢሜይልዎን ያስገቡ፣ የማደሻ ማስፈንጠሪያ እንልክልዎታለን።",
+    "sendResetLink": "የማደሻ ማስፈንጠሪያ ላክ",
+    "sendingReset": "እየተላከ ነው…",
+    "resetSent": "ለ {{email}} አካውንት ካለ፣ የማደሻ ማስፈንጠሪያ በመላክ ላይ ነው።",
+    "resetFailed": "የማደሻ ማስፈንጠሪያውን መላክ አልተቻለም። እባክዎ እንደገና ይሞክሩ።",
+    "resetLinkInvalid": "ይህ ማስፈንጠሪያ ልክ ያልሆነ ወይም ጊዜው ያለፈበት ነው። እባክዎ አዲስ ይጠይቁ።",
+    "backToSignIn": "ወደ መግቢያ ተመለስ",
+    "setNewPassword": "ለአካውንትዎ አዲስ የይለፍ ቃል ይምረጡ።"
   },
   "nav": {
     "dashboard": "ዳሽቦርድ",
@@ -58,9 +67,24 @@
     "myAccount": "የኔ አካውንት",
     "orderHistory": "የትዕዛዝ ታሪክ",
     "wallet": "ዋሌት",
+    "settings": "ቅንብሮች",
     "audit": "ኦዲትና ሪፖርት",
     "auditLog": "የኦዲት መዝገብ",
     "reports": "ሪፖርቶች"
+  },
+  "settings": {
+    "title": "የአካውንት ቅንብሮች",
+    "changePassword": "የይለፍ ቃል ቀይር",
+    "changePasswordSubtitle": "ለመግቢያ የሚጠቀሙበትን የይለፍ ቃል ያዘምኑ።",
+    "currentPassword": "የአሁኑ የይለፍ ቃል",
+    "newPassword": "አዲስ የይለፍ ቃል",
+    "confirmPassword": "አዲሱን የይለፍ ቃል ያረጋግጡ",
+    "updatePassword": "የይለፍ ቃል አዘምን",
+    "updating": "በማዘመን ላይ…",
+    "passwordUpdated": "የይለፍ ቃልዎ ተዘምኗል።",
+    "passwordMismatch": "አዲሶቹ የይለፍ ቃላት አይመሳሰሉም።",
+    "passwordTooShort": "የይለፍ ቃል ቢያንስ 8 ፊደላት ሊኖረው ይገባል።",
+    "currentPasswordWrong": "የአሁኑ የይለፍ ቃል ትክክል አይደለም።"
   },
   "roles": {
     "super_admin": "አስተዳዳሪ",

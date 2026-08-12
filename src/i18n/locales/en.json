@@ -38,7 +38,16 @@
     "signingIn": "Signing in…",
     "invalidCredentials": "That email or password isn't right.",
     "welcome": "Welcome back",
-    "subtitle": "Sign in with the account your admin set up for you."
+    "subtitle": "Sign in with the account your admin set up for you.",
+    "forgotPassword": "Forgot password?",
+    "resetSubtitle": "Enter your email and we'll send you a reset link.",
+    "sendResetLink": "Send reset link",
+    "sendingReset": "Sending…",
+    "resetSent": "If an account exists for {{email}}, a reset link is on its way.",
+    "resetFailed": "Couldn't send the reset link. Please try again.",
+    "resetLinkInvalid": "This reset link is invalid or has expired. Please request a new one.",
+    "backToSignIn": "Back to sign in",
+    "setNewPassword": "Choose a new password for your account."
   },
   "nav": {
     "dashboard": "Dashboard",
@@ -58,9 +67,24 @@
     "myAccount": "My account",
     "orderHistory": "Order history",
     "wallet": "Wallet",
+    "settings": "Settings",
     "audit": "Audit & reports",
     "auditLog": "Audit log",
     "reports": "Reports"
+  },
+  "settings": {
+    "title": "Account settings",
+    "changePassword": "Change password",
+    "changePasswordSubtitle": "Update the password you use to sign in.",
+    "currentPassword": "Current password",
+    "newPassword": "New password",
+    "confirmPassword": "Confirm new password",
+    "updatePassword": "Update password",
+    "updating": "Updating…",
+    "passwordUpdated": "Your password has been updated.",
+    "passwordMismatch": "The new passwords don't match.",
+    "passwordTooShort": "Password must be at least 8 characters.",
+    "currentPasswordWrong": "That current password isn't right."
   },
   "roles": {
     "super_admin": "Admin",

@@ -59,6 +59,36 @@ export function AuthProvider({ children }) {
     await supabase.auth.signOut()
   }
 
+  // Self-service password change — requires an active session, re-verifies the
+  // current password first so someone who walked away from an unlocked device
+  // can't change it without knowing it.
+  const changePassword = async (currentPassword, newPassword) => {
+    if (!session?.user?.email) return { error: new Error('No active session') }
+    const { error: verifyError } = await supabase.auth.signInWithPassword({
+      email: session.user.email,
+      password: currentPassword
+    })
+    if (verifyError) return { error: verifyError }
+
+    const { error } = await supabase.auth.updateUser({ password: newPassword })
+    return { error }
+  }
+
+  // "Forgot password" — sends a reset link to the given email. The link lands
+  // the person on /reset-password with a temporary recovery session already set.
+  const sendPasswordReset = async (email) => {
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: `${window.location.origin}/reset-password`
+    })
+    return { error }
+  }
+
+  // Called from the /reset-password page once a recovery session is active.
+  const completePasswordReset = async (newPassword) => {
+    const { error } = await supabase.auth.updateUser({ password: newPassword })
+    return { error }
+  }
+
   // Persists the language choice to the person's profile so it follows them to any device
   const setLanguage = async (lang) => {
     i18n.changeLanguage(lang)
@@ -76,6 +106,9 @@ export function AuthProvider({ children }) {
     loading,
     signIn,
     signOut,
+    changePassword,
+    sendPasswordReset,
+    completePasswordReset,
     setLanguage
   }
 

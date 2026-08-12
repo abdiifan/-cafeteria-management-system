@@ -4,6 +4,7 @@ import ProtectedRoute from './components/layout/ProtectedRoute'
 import AppLayout from './components/layout/AppLayout'
 
 import Login from './pages/Login'
+import ResetPassword from './pages/ResetPassword'
 import Dashboard from './pages/Dashboard'
 
 import ItemsPage from './pages/warehouse/ItemsPage'
@@ -26,6 +27,8 @@ import WalletPage from './pages/customer/WalletPage'
 import AuditLogPage from './pages/audit/AuditLogPage'
 import ReportsPage from './pages/audit/ReportsPage'
 
+import SettingsPage from './pages/account/SettingsPage'
+
 const WAREHOUSE_ROLES = ['warehouse_keeper', 'auditor']
 const KITCHEN_ROLES = ['kitchen_staff', 'auditor']
 const POS_ROLES = ['cashier']
@@ -37,6 +40,7 @@ export default function App() {
       <AuthProvider>
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
 
           <Route
             element={
@@ -63,6 +67,7 @@ export default function App() {
 
             <Route path="/account/orders" element={<OrderHistoryPage />} />
             <Route path="/account/wallet" element={<WalletPage />} />
+            <Route path="/account/settings" element={<SettingsPage />} />
 
             <Route path="/audit/log" element={<ProtectedRoute roles={AUDIT_ROLES}><AuditLogPage /></ProtectedRoute>} />
             <Route path="/audit/reports" element={<ProtectedRoute roles={AUDIT_ROLES}><ReportsPage /></ProtectedRoute>} />
