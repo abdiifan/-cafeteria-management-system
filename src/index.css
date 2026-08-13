@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html[lang='am'] body {
+  font-family: 'Noto Sans Ethiopic', 'Inter', sans-serif;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid #C79A3B;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #cfc7ae;
+  border-radius: 8px;
+}
+
+/* ============================================================
+   Thermal receipt printing
+   ============================================================
+   Only the element with #receipt-print-area (see Receipt in
+   POSPage.jsx) is meant to reach paper. Everything else on the
+   page — sidebar, topbar, buttons — is hidden at print time, and
+   the receipt itself is reflowed to a 58mm or 80mm roll width
+   instead of the on-screen card layout.
+   The width is chosen via a data attribute the print button sets
+   before calling window.print(), since most thermal printers are
+   fixed to one of the two widths and a shop won't have both.
+   ============================================================ */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #receipt-print-area, #receipt-print-area * {
+    visibility: visible;
+  }
+  #receipt-print-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'Inter', 'Noto Sans Ethiopic', sans-serif;
+    font-size: 11px;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
+  }
+  html[data-receipt-width='58mm'] #receipt-print-area {
+    width: 58mm;
+  }
+  html[data-receipt-width='80mm'] #receipt-print-area {
+    width: 80mm;
+  }
+  @page {
+    margin: 2mm;
+  }
+}
