@@ -2,7 +2,7 @@ import {
   LayoutDashboard, Boxes, Truck, AlertTriangle, ClipboardList,
   ChefHat, Utensils, ClipboardCheck, Trash2, ShoppingCart,
   Receipt, Wallet, ScrollText, BarChart3, Tv, Settings,
-  ShieldCheck, UserCog, Percent, Bell
+  ShieldCheck, UserCog, Percent, Bell, UtensilsCrossed
 } from 'lucide-react'
 
 // Each entry declares which roles can see it. super_admin can always see everything (handled in Sidebar).
@@ -72,6 +72,7 @@ export const NAV_SECTIONS = [
     icon: Receipt,
     roles: ['customer', 'kitchen_staff', 'cashier', 'warehouse_keeper', 'super_admin', 'auditor'],
     children: [
+      { labelKey: 'nav.orderNow', path: '/account/order', icon: UtensilsCrossed },
       { labelKey: 'nav.orderHistory', path: '/account/orders', icon: Receipt },
       { labelKey: 'nav.wallet', path: '/account/wallet', icon: Wallet },
       { labelKey: 'nav.settings', path: '/account/settings', icon: Settings }
