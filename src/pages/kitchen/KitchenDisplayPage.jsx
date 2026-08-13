@@ -2,18 +2,26 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Clock, ArrowRight, Wifi, WifiOff } from 'lucide-react'
 import { supabase } from '../../lib/supabaseClient'
+import { useAuth } from '../../context/AuthContext'
 import Card from '../../components/common/Card'
 import Button from '../../components/common/Button'
 
 // Order status moves one step at a time: placed -> preparing -> ready -> completed.
 // 'completed' is what actually fires the made-to-order stock deduction (Step 4
 // trigger), so this page is also what "serves" an order, not just a display.
+//
+// Cashiers can SEE this board (so they know whether an order is ready to hand
+// over) but can't advance it — only kitchen_staff (and auditor/super_admin)
+// actually mark food as prepared/ready/completed. This keeps "took the
+// payment" and "confirmed the food was made" as two different people.
 const NEXT_STATUS = { placed: 'preparing', preparing: 'ready', ready: 'completed' }
 const COLUMNS = ['placed', 'preparing', 'ready']
 
 export default function KitchenDisplayPage() {
   const { t, i18n } = useTranslation()
+  const { role } = useAuth()
   const isAm = i18n.language?.startsWith('am')
+  const canAdvance = role !== 'cashier'
 
   const [orders, setOrders] = useState([])
   const [connected, setConnected] = useState(false)
@@ -99,6 +107,7 @@ export default function KitchenDisplayPage() {
                   t={t}
                   busy={advancing === order.id}
                   onAdvance={() => advance(order)}
+                  canAdvance={canAdvance}
                 />
               ))}
             </div>
@@ -113,7 +122,7 @@ function elapsedMinutes(createdAt) {
   return Math.max(0, Math.round((Date.now() - new Date(createdAt).getTime()) / 60000))
 }
 
-function OrderTicket({ order, isAm, t, busy, onAdvance }) {
+function OrderTicket({ order, isAm, t, busy, onAdvance, canAdvance }) {
   const next = NEXT_STATUS[order.status]
   const mins = elapsedMinutes(order.created_at)
   return (
@@ -136,11 +145,14 @@ function OrderTicket({ order, isAm, t, busy, onAdvance }) {
         ))}
       </ul>
 
-      {next && (
+      {next && canAdvance && (
         <Button size="sm" className="w-full" disabled={busy} onClick={onAdvance}>
           {busy ? t('common.loading') : t(`kitchen.advanceTo.${next}`)}
           {!busy && <ArrowRight size={14} />}
         </Button>
+      )}
+      {next && !canAdvance && (
+        <p className="text-xs text-bark/40 text-center py-1.5">{t('kitchen.viewOnly')}</p>
       )}
     </Card>
   )
