@@ -76,7 +76,8 @@
     "admin": "Admin",
     "usersRoles": "Users & roles",
     "taxVat": "Tax & VAT",
-    "notifications": "Notifications"
+    "notifications": "Notifications",
+    "orderNow": "Order now"
   },
   "settings": {
     "title": "Account settings",
@@ -133,7 +134,8 @@
     "expiringSoon": "Expiring within 7 days",
     "walletBalance": "Wallet balance",
     "recentOrders": "Recent orders",
-    "topDishes": "Top dishes today"
+    "topDishes": "Top dishes today",
+    "howItWorks": "Order your lunch and pay straight from your wallet balance."
   },
   "warehouse": {
     "items": "Items",
@@ -262,7 +264,15 @@
     "rejectTopup": "Reject top-up request",
     "reviewNote": "Note (optional)",
     "reviewNoteHint": "e.g. \"No transfer received\"",
-    "reviewedAt": "Reviewed"
+    "reviewedAt": "Reviewed",
+    "orderNow": "Order now",
+    "placeOrder": "Place order & pay from wallet",
+    "insufficientBalance": "Not enough wallet balance for this order.",
+    "orderSuccess": "Order #{{id}} placed",
+    "orderSuccessHint": "It's been sent to the kitchen. You can track its status in your order history.",
+    "balanceHint": "Available to spend on your next order",
+    "fundedByPayroll": "Funded by payroll",
+    "fundedByPayrollHint": "Total top-ups deducted from your salary"
   },
   "audit": {
     "auditLog": "Audit log",

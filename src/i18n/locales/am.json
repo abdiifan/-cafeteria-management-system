@@ -76,7 +76,8 @@
     "admin": "አስተዳደር",
     "usersRoles": "ተጠቃሚዎችና ሚናዎች",
     "taxVat": "ግብርና ተ.እ.ታ",
-    "notifications": "ማሳወቂያዎች"
+    "notifications": "ማሳወቂያዎች",
+    "orderNow": "አሁን አዘዝ"
   },
   "settings": {
     "title": "የአካውንት ቅንብሮች",
@@ -133,7 +134,8 @@
     "expiringSoon": "በ7 ቀናት ውስጥ የሚያልቁ",
     "walletBalance": "የዋሌት ቀሪ ሂሳብ",
     "recentOrders": "የቅርብ ጊዜ ትዕዛዞች",
-    "topDishes": "የዛሬ ተመራጭ ምግቦች"
+    "topDishes": "የዛሬ ተመራጭ ምግቦች",
+    "howItWorks": "ምሳዎን ያዝዙ እና በቀጥታ ከዋሌት ቀሪ ሂሳብዎ ይክፈሉ።"
   },
   "warehouse": {
     "items": "እቃዎች",
@@ -262,7 +264,15 @@
     "rejectTopup": "የመሙያ ጥያቄን አትቀበል",
     "reviewNote": "ማስታወሻ (አማራጭ)",
     "reviewNoteHint": "ለምሳሌ፦ \"ዝውውር አልደረሰም\"",
-    "reviewedAt": "የተገመገመበት ጊዜ"
+    "reviewedAt": "የተገመገመበት ጊዜ",
+    "orderNow": "አሁን አዘዝ",
+    "placeOrder": "ትዕዛዝ ላክ እና ከዋሌት ክፈል",
+    "insufficientBalance": "ለዚህ ትዕዛዝ በዋሌትዎ በቂ ቀሪ ሂሳብ የለም።",
+    "orderSuccess": "ትዕዛዝ #{{id}} ተልኳል",
+    "orderSuccessHint": "ወደ ኩሽና ተልኳል። ሁኔታውን በትዕዛዝ ታሪክዎ ውስጥ መከታተል ይችላሉ።",
+    "balanceHint": "ለሚቀጥለው ትዕዛዝዎ ሊውል የሚችል መጠን",
+    "fundedByPayroll": "ከደመወዝ የተሞላ",
+    "fundedByPayrollHint": "ከደመወዝዎ ተቀናሽ የተደረገ ጠቅላላ የመሙያ መጠን"
   },
   "audit": {
     "auditLog": "የኦዲት መዝገብ",
