@@ -203,6 +203,7 @@
     "reconnecting": "በመገናኘት ላይ…",
     "columnEmpty": "እዚህ ምንም የለም",
     "minutesAgo": "{{count}}ደ",
+    "viewOnly": "ለማየት ብቻ — የኩሽና ሠራተኞች ያዘምኑታል",
     "advanceTo": {
       "preparing": "ማዘጋጀት ጀምር",
       "ready": "ዝግጁ ነው ብለህ ምልክት አድርግ",

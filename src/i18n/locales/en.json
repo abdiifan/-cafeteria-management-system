@@ -203,6 +203,7 @@
     "reconnecting": "Reconnecting…",
     "columnEmpty": "Nothing here",
     "minutesAgo": "{{count}}m",
+    "viewOnly": "View only — kitchen staff updates this",
     "advanceTo": {
       "preparing": "Start preparing",
       "ready": "Mark ready",
