@@ -22,6 +22,7 @@ import KitchenDisplayPage from './pages/kitchen/KitchenDisplayPage'
 import POSPage from './pages/pos/POSPage'
 import WalletTopUpsPage from './pages/pos/WalletTopUpsPage'
 
+import OrderPage from './pages/customer/OrderPage'
 import OrderHistoryPage from './pages/customer/OrderHistoryPage'
 import WalletPage from './pages/customer/WalletPage'
 
@@ -73,6 +74,7 @@ export default function App() {
             <Route path="/pos" element={<ProtectedRoute roles={POS_ROLES}><POSPage /></ProtectedRoute>} />
             <Route path="/pos/wallet-topups" element={<ProtectedRoute roles={WALLET_APPROVAL_ROLES}><WalletTopUpsPage /></ProtectedRoute>} />
 
+            <Route path="/account/order" element={<OrderPage />} />
             <Route path="/account/orders" element={<OrderHistoryPage />} />
             <Route path="/account/wallet" element={<WalletPage />} />
             <Route path="/account/settings" element={<SettingsPage />} />
