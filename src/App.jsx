@@ -20,6 +20,7 @@ import WastePage from './pages/kitchen/WastePage'
 import KitchenDisplayPage from './pages/kitchen/KitchenDisplayPage'
 
 import POSPage from './pages/pos/POSPage'
+import WalletTopUpsPage from './pages/pos/WalletTopUpsPage'
 
 import OrderHistoryPage from './pages/customer/OrderHistoryPage'
 import WalletPage from './pages/customer/WalletPage'
@@ -36,6 +37,7 @@ import NotificationsPage from './pages/admin/NotificationsPage'
 const WAREHOUSE_ROLES = ['warehouse_keeper', 'auditor']
 const KITCHEN_ROLES = ['kitchen_staff', 'auditor']
 const POS_ROLES = ['cashier']
+const WALLET_APPROVAL_ROLES = ['cashier', 'super_admin']
 const AUDIT_ROLES = ['auditor']
 const ADMIN_ROLES = ['super_admin']
 
@@ -69,6 +71,7 @@ export default function App() {
             <Route path="/kitchen/waste" element={<ProtectedRoute roles={[...KITCHEN_ROLES, 'warehouse_keeper']}><WastePage /></ProtectedRoute>} />
 
             <Route path="/pos" element={<ProtectedRoute roles={POS_ROLES}><POSPage /></ProtectedRoute>} />
+            <Route path="/pos/wallet-topups" element={<ProtectedRoute roles={WALLET_APPROVAL_ROLES}><WalletTopUpsPage /></ProtectedRoute>} />
 
             <Route path="/account/orders" element={<OrderHistoryPage />} />
             <Route path="/account/wallet" element={<WalletPage />} />

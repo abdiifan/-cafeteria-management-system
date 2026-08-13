@@ -67,7 +67,18 @@ export default function UsersPage() {
     const { data, error: invokeError } = await supabase.functions.invoke('admin-create-user', { body: form })
     setSaving(false)
     if (invokeError || data?.error) {
-      setError(data?.error || invokeError.message || t('common.error'))
+      let message = data?.error || invokeError?.message || t('common.error')
+      // supabase-js doesn't parse the body on non-2xx responses — the real
+      // reason from the Edge Function lives in invokeError.context instead.
+      if (invokeError?.context) {
+        try {
+          const body = await invokeError.context.json()
+          if (body?.error) message = body.error
+        } catch {
+          // context wasn't JSON (e.g. network-level failure) — keep the fallback message
+        }
+      }
+      setError(message)
       return
     }
     setOpen(false)

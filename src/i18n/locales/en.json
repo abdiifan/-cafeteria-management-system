@@ -68,6 +68,7 @@
     "myAccount": "My account",
     "orderHistory": "Order history",
     "wallet": "Wallet",
+    "walletTopups": "Wallet top-ups",
     "settings": "Settings",
     "audit": "Audit & reports",
     "auditLog": "Audit log",
@@ -251,7 +252,16 @@
     "topUpStatus": "Status",
     "feedback": "Leave feedback",
     "rating": "Rating",
-    "comment": "Comment"
+    "comment": "Comment",
+    "walletTopups": "Wallet top-ups",
+    "pendingTopups": "Pending requests",
+    "pendingTopupsSubtitle": "Confirm the cash or transfer was received before approving.",
+    "noPendingTopups": "No pending top-up requests.",
+    "recentDecisions": "Recently reviewed",
+    "rejectTopup": "Reject top-up request",
+    "reviewNote": "Note (optional)",
+    "reviewNoteHint": "e.g. \"No transfer received\"",
+    "reviewedAt": "Reviewed"
   },
   "audit": {
     "auditLog": "Audit log",

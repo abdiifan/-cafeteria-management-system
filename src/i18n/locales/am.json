@@ -68,6 +68,7 @@
     "myAccount": "የኔ አካውንት",
     "orderHistory": "የትዕዛዝ ታሪክ",
     "wallet": "ዋሌት",
+    "walletTopups": "የዋሌት መሙያ ጥያቄዎች",
     "settings": "ቅንብሮች",
     "audit": "ኦዲትና ሪፖርት",
     "auditLog": "የኦዲት መዝገብ",
@@ -251,7 +252,16 @@
     "topUpStatus": "ሁኔታ",
     "feedback": "አስተያየት ይስጡ",
     "rating": "ደረጃ",
-    "comment": "አስተያየት"
+    "comment": "አስተያየት",
+    "walletTopups": "የዋሌት መሙያ ጥያቄዎች",
+    "pendingTopups": "በመጠባበቅ ላይ ያሉ ጥያቄዎች",
+    "pendingTopupsSubtitle": "ገንዘቡ ወይም ዝውውሩ መድረሱን አረጋግጠው ያጽድቁ።",
+    "noPendingTopups": "በመጠባበቅ ላይ ያለ ጥያቄ የለም።",
+    "recentDecisions": "በቅርቡ የተገመገሙ",
+    "rejectTopup": "የመሙያ ጥያቄን አትቀበል",
+    "reviewNote": "ማስታወሻ (አማራጭ)",
+    "reviewNoteHint": "ለምሳሌ፦ \"ዝውውር አልደረሰም\"",
+    "reviewedAt": "የተገመገመበት ጊዜ"
   },
   "audit": {
     "auditLog": "የኦዲት መዝገብ",

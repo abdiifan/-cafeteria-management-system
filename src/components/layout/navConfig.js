@@ -60,6 +60,13 @@ export const NAV_SECTIONS = [
     roles: ['cashier']
   },
   {
+    key: 'walletTopups',
+    labelKey: 'nav.walletTopups',
+    icon: Wallet,
+    path: '/pos/wallet-topups',
+    roles: ['super_admin', 'cashier']
+  },
+  {
     key: 'account',
     labelKey: 'nav.myAccount',
     icon: Receipt,
